@@ -13,7 +13,8 @@ export const services: Service[] = [
       'Transportation with GPS tracking',
       'Unpacking and setup assistance'
     ],
-    price: 'Starting from $1,200'
+    price: 'Starting from $1,200',
+    slug: 'household-moving'
   },
   {
     id: 'long-distance',
@@ -27,7 +28,8 @@ export const services: Service[] = [
       'Real-time tracking',
       'Insurance coverage'
     ],
-    price: 'Starting from $2,500'
+    price: 'Starting from $2,500',
+    slug: 'long-distance-movers'
   },
   {
     id: 'international',
@@ -41,7 +43,8 @@ export const services: Service[] = [
       'Door-to-door service',
       'Insurance coverage'
     ],
-    price: 'Starting from $5,000'
+    price: 'Starting from $5,000',
+    slug: 'international-moving'
   },
   {
     id: 'corporate',
@@ -55,7 +58,8 @@ export const services: Service[] = [
       'Furniture moving',
       'Project management'
     ],
-    price: 'Starting from $3,000'
+    price: 'Starting from $3,000',
+    slug: 'corporate-moving'
   },
   {
     id: 'military',
@@ -69,7 +73,8 @@ export const services: Service[] = [
       'Documentation assistance',
       'Priority scheduling'
     ],
-    price: 'Starting from $2,000'
+    price: 'Starting from $2,000',
+    slug: 'military-moving'
   },
   {
     id: 'auto-transport',
@@ -83,7 +88,8 @@ export const services: Service[] = [
       'Insurance coverage',
       'Real-time tracking'
     ],
-    price: 'Starting from $800'
+    price: 'Starting from $800',
+    slug: 'auto-transport'
   }
 ];
 

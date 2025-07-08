@@ -3,6 +3,7 @@ import { services } from '@/lib/data';
 import { Truck, Home, Building, Car, Plane, Shield, Clock, Star } from 'lucide-react';
 import Button from '../ui/Button';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const serviceIcons = {
   'Household Moving': Truck,
@@ -100,13 +101,15 @@ export default function Services() {
                     <div className="text-2xl font-bold text-blue-600">
                       {service.price}
                     </div>
-                    <Button 
-                      size="md" 
-                      variant="primary"
-                      className="hover:scale-105 transition-transform duration-200 shadow-lg font-medium"
-                    >
-                      Get Quote
-                    </Button>
+                    <Link href={service.slug === 'long-distance-movers' ? `/long-distance-movers` : '#'}>
+                      <Button 
+                        size="md" 
+                        variant="primary"
+                        className="hover:scale-105 transition-transform duration-200 shadow-lg font-medium"
+                      >
+                        {service.slug === 'long-distance-movers' ? 'Learn More' : 'Get Quote'}
+                      </Button>
+                    </Link>
                   </div>
 
                   {/* Additional features indicator */}

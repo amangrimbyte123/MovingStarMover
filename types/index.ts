@@ -5,6 +5,7 @@ export interface Service {
   icon: string;
   features: string[];
   price?: string;
+  slug?: string;
 }
 
 export interface QuoteForm {
@@ -42,4 +43,27 @@ export interface FAQ {
   question: string;
   answer: string;
   category: string;
+}
+
+export interface State {
+  id: string;
+  name: string;
+  abbreviation: string;
+  description: string;
+}
+
+export interface City {
+  id: string;
+  name: string;
+  description: string;
+}
+
+export interface States {
+  states: State[];
+}
+
+export interface Cities {
+  cities: {
+    [key: string]: City[];
+  };
 } 

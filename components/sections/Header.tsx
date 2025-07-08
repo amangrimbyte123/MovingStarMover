@@ -1,117 +1,268 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Truck } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Menu, X, Phone, Truck, ChevronDown } from 'lucide-react';
 import Button from '../ui/Button';
+import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
 
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    document.addEventListener('mousedown', handleClickOutside);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, []);
 
+  const handleDropdownClick = (itemName: string, e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setActiveDropdown(activeDropdown === itemName ? null : itemName);
+  };
+
   const navigation = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Process', href: '#process' },
-    { name: 'Quote', href: '#quote' },
-    { name: 'Contact', href: '#contact' }
+    { 
+      name: 'Moving Services',
+      children: [
+        { name: 'Mover Near Me', href: '/movers-near-me' },
+        { name: 'Household Moving', href: '/household-moving' },
+        { name: 'Long Distance Moving', href: '/long-distance-movers' },
+        { name: 'Military Moving Companies', href: '/military-moving' },
+        { name: 'International Moving', href: '/international-moving' },
+        { name: 'Moving and Storage', href: '/moving-and-storage' },
+        { name: 'Moving Supplies', href: '/moving-supplies' },
+        { name: 'Express Small Shipments', href: '/express-shipments' },
+        { name: 'Auto Transport', href: '/auto-transport' },
+      ]
+    },
+    { 
+      name: 'Moving Resources',
+      children: [
+        { name: 'Moving Tips', href: '/moving-tips' },
+        { name: 'Moving Checklist', href: '/moving-checklist' },
+        { name: 'Moving Cost Calculator', href: '/cost-calculator' },
+      ]
+    },
+    { 
+      name: 'Corporate Relocation Services',
+      children: [
+        { name: 'Office Moving', href: '/office-moving' },
+        { name: 'Employee Relocation', href: '/employee-relocation' },
+        { name: 'Commercial Moving', href: '/commercial-moving' },
+      ]
+    },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' }
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'glass shadow-lg backdrop-blur-md' 
-        : 'bg-transparent'
-    }`}>
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'backdrop-blur-lg bg-white/80 shadow-lg' 
+          : 'bg-white/95'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+          <motion.div 
+            className="flex items-center"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <Link href="/" className="flex items-center gap-3">
+              <div className="w-11 h-11 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <Truck className="w-6 h-6 text-white" />
               </div>
-              <div className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <div className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
                 MovingStar
               </div>
-            </div>
-          </div>
+            </Link>
+          </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-1">
+          <nav className="hidden md:flex space-x-2" ref={dropdownRef}>
             {navigation.map((item) => (
-              <a
+              <div
                 key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-blue-600 px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg hover:bg-white/50 hover-lift"
+                className="relative group"
               >
-                {item.name}
-              </a>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={(e) => item.children ? handleDropdownClick(item.name, e) : null}
+                  className={`text-gray-700 hover:text-blue-600 px-4 py-2.5 text-sm font-medium transition-all duration-200 rounded-xl hover:bg-blue-50/50 ${
+                    activeDropdown === item.name ? 'text-blue-600 bg-blue-50/50' : ''
+                  }`}
+                >
+                  {item.name}
+                  {item.children && (
+                    <ChevronDown className={`ml-1 h-4 w-4 inline-block transition-transform duration-200 ${
+                      activeDropdown === item.name ? 'rotate-180' : ''
+                    }`} />
+                  )}
+                </motion.button>
+                <AnimatePresence>
+                  {item.children && activeDropdown === item.name && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute left-0 mt-2 w-64 rounded-xl shadow-xl bg-white/95 backdrop-blur-lg ring-1 ring-black/5 focus:outline-none overflow-hidden"
+                    >
+                      <div className="py-1">
+                        {item.children.map((child) => (
+                          <motion.a
+                            key={child.name}
+                            href={child.href}
+                            whileHover={{ x: 4 }}
+                            className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50/50 hover:text-blue-600 transition-colors duration-200"
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            {child.name}
+                          </motion.a>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             ))}
           </nav>
 
           {/* Contact Info */}
           <div className="hidden md:flex items-center space-x-4">
-            <div className="flex items-center text-sm text-gray-600 bg-white/50 rounded-lg px-3 py-2 backdrop-blur-sm">
+            <motion.div 
+              whileHover={{ scale: 1.02 }}
+              className="flex items-center text-sm text-gray-600 bg-blue-50/50 rounded-xl px-4 py-2.5 shadow-sm backdrop-blur-sm"
+            >
               <Phone className="h-4 w-4 mr-2 text-blue-600" />
               <span className="font-medium">(800) MOVING-1</span>
-            </div>
-            <Button size="sm" variant="primary">
-              Get Free Quote
-            </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Button size="sm" variant="primary" className="shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:scale-105">
+                Get Free Quote
+              </Button>
+            </motion.div>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-blue-600 p-2 rounded-lg hover:bg-white/50 transition-all duration-200"
-            >
-              {isMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </button>
-          </div>
+          <motion.button
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden text-gray-700 hover:text-blue-600 p-2 rounded-xl hover:bg-blue-50/50 transition-all duration-200"
+          >
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </motion.button>
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`md:hidden transition-all duration-300 overflow-hidden ${
-          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        }`}>
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 glass rounded-b-2xl mb-4">
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-blue-600 block px-4 py-3 text-base font-medium rounded-lg hover:bg-white/50 transition-all duration-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
-            <div className="pt-4 border-t border-white/20">
-              <div className="flex items-center text-sm text-gray-600 mb-3 px-4">
-                <Phone className="h-4 w-4 mr-2 text-blue-600" />
-                <span className="font-medium">(800) MOVING-1</span>
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2 }}
+              className="md:hidden overflow-hidden"
+            >
+              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-lg rounded-xl mb-4 shadow-lg">
+                {navigation.map((item) => (
+                  <div key={item.name}>
+                    {item.children ? (
+                      <>
+                        <motion.button
+                          whileTap={{ scale: 0.98 }}
+                          className="text-gray-700 px-4 py-3 text-base font-medium flex justify-between items-center w-full hover:text-blue-600 hover:bg-blue-50/50 rounded-xl"
+                          onClick={(e) => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
+                        >
+                          {item.name}
+                          <ChevronDown className={`h-4 w-4 transform transition-transform duration-200 ${
+                            activeDropdown === item.name ? 'rotate-180' : ''
+                          }`} />
+                        </motion.button>
+                        <AnimatePresence>
+                          {activeDropdown === item.name && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: 'auto' }}
+                              exit={{ opacity: 0, height: 0 }}
+                              className="pl-4 space-y-1"
+                            >
+                              {item.children.map((child) => (
+                                <motion.a
+                                  key={child.name}
+                                  href={child.href}
+                                  whileHover={{ x: 4 }}
+                                  className="block px-4 py-2.5 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50/50 rounded-xl"
+                                  onClick={() => {
+                                    setIsMenuOpen(false);
+                                    setActiveDropdown(null);
+                                  }}
+                                >
+                                  {child.name}
+                                </motion.a>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </>
+                    ) : (
+                      <motion.a
+                        whileTap={{ scale: 0.98 }}
+                        href={item.href}
+                        className="text-gray-700 hover:text-blue-600 block px-4 py-3 text-base font-medium rounded-xl hover:bg-blue-50/50 transition-all duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.name}
+                      </motion.a>
+                    )}
+                  </div>
+                ))}
+                <div className="pt-4 border-t border-gray-100">
+                  <motion.div 
+                    whileHover={{ scale: 1.02 }}
+                    className="flex items-center text-sm text-gray-600 mb-3 px-4 py-2.5 bg-blue-50/50 rounded-xl"
+                  >
+                    <Phone className="h-4 w-4 mr-2 text-blue-600" />
+                    <span className="font-medium">(800) MOVING-1</span>
+                  </motion.div>
+                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                    <Button size="sm" variant="primary" className="w-full shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
+                      Get Free Quote
+                    </Button>
+                  </motion.div>
+                </div>
               </div>
-              <Button size="sm" variant="primary" className="w-full mx-4">
-                Get Free Quote
-              </Button>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </header>
+    </motion.header>
   );
 } 

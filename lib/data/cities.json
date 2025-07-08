@@ -1,0 +1,89 @@
+{
+  "cities": {
+    "ca": [
+      {
+        "id": "los-angeles",
+        "name": "Los Angeles",
+        "description": "The entertainment capital of the world"
+      },
+      {
+        "id": "san-francisco",
+        "name": "San Francisco",
+        "description": "Known for its iconic Golden Gate Bridge and tech industry"
+      },
+      {
+        "id": "san-diego",
+        "name": "San Diego",
+        "description": "Famous for its perfect weather and beautiful beaches"
+      }
+    ],
+    "ny": [
+      {
+        "id": "new-york-city",
+        "name": "New York City",
+        "description": "The city that never sleeps"
+      },
+      {
+        "id": "buffalo",
+        "name": "Buffalo",
+        "description": "Known for its architecture and proximity to Niagara Falls"
+      },
+      {
+        "id": "albany",
+        "name": "Albany",
+        "description": "The capital city of New York State"
+      }
+    ],
+    "tx": [
+      {
+        "id": "houston",
+        "name": "Houston",
+        "description": "The largest city in Texas, known for space exploration"
+      },
+      {
+        "id": "dallas",
+        "name": "Dallas",
+        "description": "A major commercial and cultural hub"
+      },
+      {
+        "id": "austin",
+        "name": "Austin",
+        "description": "The state capital and technology hub"
+      }
+    ],
+    "fl": [
+      {
+        "id": "miami",
+        "name": "Miami",
+        "description": "Known for its beaches and vibrant culture"
+      },
+      {
+        "id": "orlando",
+        "name": "Orlando",
+        "description": "Home to world-famous theme parks"
+      },
+      {
+        "id": "tampa",
+        "name": "Tampa",
+        "description": "A major business center with beautiful beaches"
+      }
+    ],
+    "il": [
+      {
+        "id": "chicago",
+        "name": "Chicago",
+        "description": "The Windy City, known for its architecture and culture"
+      },
+      {
+        "id": "springfield",
+        "name": "Springfield",
+        "description": "The state capital with rich history"
+      },
+      {
+        "id": "rockford",
+        "name": "Rockford",
+        "description": "A historic industrial city with cultural attractions"
+      }
+    ]
+  }
+} 
