@@ -36,6 +36,7 @@ export default function CityPage({ params }: PageProps) {
   const { state: stateId, city: cityId } = use(params);
   const state = (states as States).states.find((s) => s.id === stateId);
   const city = (cities as Cities).cities[stateId]?.find((c) => c.id === cityId);
+  const otherCities = (cities as Cities).cities[stateId]?.filter((c) => c.id !== cityId) || [];
 
   if (!state || !city) {
     notFound();
@@ -173,6 +174,43 @@ export default function CityPage({ params }: PageProps) {
                   <h3 className="text-xl font-semibold mb-2">Full Protection</h3>
                   <p className="text-gray-600">Comprehensive insurance and damage protection included</p>
                 </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Moving Routes Section */}
+          <Card className="mb-16">
+            <CardContent className="p-8">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold mb-4">Popular Moving Routes from {city.name}</h2>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  Explore our moving services to other cities in {state.name}
+                </p>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {otherCities.map((toCity) => (
+                  <Link 
+                    key={toCity.id} 
+                    href={`/long-distance-movers/${stateId}/${cityId}/to/${toCity.id}`}
+                    className="block"
+                  >
+                    <Card className="h-full hover:shadow-xl transition-shadow duration-300">
+                      <CardContent className="p-6">
+                        <div className="flex items-center gap-4 mb-4">
+                          <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <Truck className="w-6 h-6 text-blue-600" />
+                          </div>
+                          <div>
+                            <h3 className="text-xl font-semibold">Moving to {toCity.name}</h3>
+                            <p className="text-gray-600 text-sm">From {city.name}</p>
+                          </div>
+                          <ArrowRight className="w-5 h-5 text-blue-600 ml-auto" />
+                        </div>
+                        <p className="text-gray-600 line-clamp-2">{toCity.description}</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                ))}
               </div>
             </CardContent>
           </Card>

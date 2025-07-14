@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Truck, MapPin, Shield, Star, CheckCircle, Clock, Phone, Calendar, Package, Home, Globe, Building2, Warehouse, DollarSign, Users, Scale, Box, CalendarClock } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,6 +10,24 @@ import Button from '@/components/ui/Button';
 import statesData from '@/lib/data/states.json';
 
 export default function LongDistanceMovers() {
+  const [mounted, setMounted] = useState(false);
+  const [formData, setFormData] = useState({
+    moveDate: '',
+    homeSize: ''
+  });
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
   return (
     <main className="min-h-screen">
       <Header />
@@ -92,29 +110,39 @@ export default function LongDistanceMovers() {
                     />
                   </div>
                 </div>
-                <div className="space-y-2">
-                  <label className="text-white/80 text-sm font-medium">Moving Date</label>
-                  <div className="relative">
-                    <Calendar className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/50 w-5 h-5" />
-                    <input 
-                      type="date" 
-                      className="w-full pl-12 pr-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all"
-                    />
+                {mounted && (
+                  <div className="space-y-2">
+                    <label className="text-white/80 text-sm font-medium">Moving Date</label>
+                    <div className="relative">
+                      <Calendar className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/50 w-5 h-5" />
+                      <input 
+                        type="date" 
+                        name="moveDate"
+                        value={formData.moveDate}
+                        onChange={handleInputChange}
+                        className="w-full pl-12 pr-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-white/80 text-sm font-medium">Home Size</label>
-                  <select 
-                    className="w-full pl-12 pr-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all"
-                  >
-                    <option value="">Select home size</option>
-                    <option value="studio">Studio</option>
-                    <option value="1bed">1 Bedroom</option>
-                    <option value="2bed">2 Bedrooms</option>
-                    <option value="3bed">3 Bedrooms</option>
-                    <option value="4bed">4+ Bedrooms</option>
-                  </select>
-                </div>
+                )}
+                {mounted && (
+                  <div className="space-y-2">
+                    <label className="text-white/80 text-sm font-medium">Home Size</label>
+                    <select 
+                      name="homeSize"
+                      value={formData.homeSize}
+                      onChange={handleInputChange}
+                      className="w-full pl-12 pr-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all"
+                    >
+                      <option value="">Select home size</option>
+                      <option value="studio">Studio</option>
+                      <option value="1bed">1 Bedroom</option>
+                      <option value="2bed">2 Bedrooms</option>
+                      <option value="3bed">3 Bedrooms</option>
+                      <option value="4bed">4+ Bedrooms</option>
+                    </select>
+                  </div>
+                )}
                 <Button 
                   size="lg"
                   variant="primary"
@@ -627,7 +655,7 @@ export default function LongDistanceMovers() {
                         <MapPin className="w-6 h-6 text-white" />
                       </div>
                       <h3 className="text-xl font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
-                        Moving to {state.name}
+                        {state.name}
                       </h3>
                     </div>
                     <p className="text-gray-600 mb-4">{state.description}</p>

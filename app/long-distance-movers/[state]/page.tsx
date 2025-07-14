@@ -272,6 +272,43 @@ export default function StatePage({ params, searchParams }: PageProps) {
           </div>
         </section>
 
+        {/* Other States Section */}
+        <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold mb-8 text-center text-blue-900">
+              Moving From {state.name} to Other States
+            </h2>
+            <p className="text-gray-700 text-center mb-12 max-w-2xl mx-auto">
+              Planning a move from {state.name} to another state? Explore our specialized moving services 
+              for different state-to-state routes. We ensure a smooth transition to your new home.
+            </p>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {(statesData as States).states
+                .filter(s => s.id !== state.id)
+                .map(otherState => (
+                  <Link
+                    key={otherState.id}
+                    href={`/long-distance-movers/${state.id}/moving-to/${otherState.id}`}
+                    className="group block p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+                  >
+                    <div className="flex items-center gap-3 mb-3">
+                      <MapPin className="w-5 h-5 text-blue-500" />
+                      <span className="font-semibold text-gray-900">{otherState.name}</span>
+                    </div>
+                    <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+                      {otherState.description}
+                    </p>
+                    <div className="flex items-center text-blue-600 text-sm group-hover:translate-x-1 transition-transform">
+                      <span>View Moving Route</span>
+                      <ArrowRight className="w-4 h-4 ml-1" />
+                    </div>
+                  </Link>
+                ))}
+            </div>
+          </div>
+        </section>
+
         {/* Popular Cities Section with Map */}
         <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
           <div className="container mx-auto px-4">
@@ -285,7 +322,7 @@ export default function StatePage({ params, searchParams }: PageProps) {
                   {cities.map((city) => (
                     <Link 
                       key={city.id}
-                      href={`/long-distance-movers/${stateId}/moving-to/${city.id}`}
+                      href={`/long-distance-movers/${stateId}/${city.id}`}
                       className="group cursor-pointer"
                     >
                       <div className="flex items-center gap-4 p-4 rounded-lg border border-gray-100 hover:border-blue-200 transition-all duration-300">

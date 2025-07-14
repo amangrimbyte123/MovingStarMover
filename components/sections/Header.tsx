@@ -5,16 +5,31 @@ import { Menu, X, Phone, Truck, ChevronDown } from 'lucide-react';
 import Button from '../ui/Button';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
+  const [mounted, setMounted] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
+  // Set mounted state
   useEffect(() => {
+    setMounted(true);
+    return () => setMounted(false);
+  }, []);
+
+  // Handle scroll and click outside only after mounting
+  useEffect(() => {
+    if (!mounted) return;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const scrolled = window.scrollY > 20;
+      if (isScrolled !== scrolled) {
+        setIsScrolled(scrolled);
+      }
     };
 
     const handleClickOutside = (event: MouseEvent) => {
@@ -26,11 +41,14 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll);
     document.addEventListener('mousedown', handleClickOutside);
     
+    // Initial scroll check
+    handleScroll();
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, []);
+  }, [mounted, isScrolled]);
 
   const handleDropdownClick = (itemName: string, e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -39,38 +57,26 @@ export default function Header() {
 
   const navigation = [
     { 
-      name: 'Moving Services',
-      children: [
-        { name: 'Mover Near Me', href: '/movers-near-me' },
-        { name: 'Household Moving', href: '/household-moving' },
-        { name: 'Long Distance Moving', href: '/long-distance-movers' },
-        { name: 'Military Moving Companies', href: '/military-moving' },
-        { name: 'International Moving', href: '/international-moving' },
-        { name: 'Moving and Storage', href: '/moving-and-storage' },
-        { name: 'Moving Supplies', href: '/moving-supplies' },
-        { name: 'Express Small Shipments', href: '/express-shipments' },
-        { name: 'Auto Transport', href: '/auto-transport' },
-      ]
+      name: 'Long Distance Movers',
+      href: '/long-distance-movers',
     },
     { 
       name: 'Moving Resources',
+      href: '/moving-resources',
       children: [
-        { name: 'Moving Tips', href: '/moving-tips' },
-        { name: 'Moving Checklist', href: '/moving-checklist' },
-        { name: 'Moving Cost Calculator', href: '/cost-calculator' },
-      ]
-    },
-    { 
-      name: 'Corporate Relocation Services',
-      children: [
-        { name: 'Office Moving', href: '/office-moving' },
-        { name: 'Employee Relocation', href: '/employee-relocation' },
-        { name: 'Commercial Moving', href: '/commercial-moving' },
+        { name: 'Moving Tips', href: '/moving-resources#tips' },
+        { name: 'Moving Checklist', href: '/moving-resources#checklist' },
+        { name: 'Packing Guides', href: '/moving-resources#packing' },
       ]
     },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' }
   ];
+
+  // Only render content after mounting
+  if (!mounted) {
+    return null; // Return null on server-side
+  }
 
   return (
     <motion.header
@@ -107,46 +113,59 @@ export default function Header() {
                 key={item.name}
                 className="relative group"
               >
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={(e) => item.children ? handleDropdownClick(item.name, e) : null}
-                  className={`text-gray-700 hover:text-blue-600 px-4 py-2.5 text-sm font-medium transition-all duration-200 rounded-xl hover:bg-blue-50/50 ${
-                    activeDropdown === item.name ? 'text-blue-600 bg-blue-50/50' : ''
-                  }`}
-                >
-                  {item.name}
-                  {item.children && (
-                    <ChevronDown className={`ml-1 h-4 w-4 inline-block transition-transform duration-200 ${
-                      activeDropdown === item.name ? 'rotate-180' : ''
-                    }`} />
-                  )}
-                </motion.button>
-                <AnimatePresence>
-                  {item.children && activeDropdown === item.name && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute left-0 mt-2 w-64 rounded-xl shadow-xl bg-white/95 backdrop-blur-lg ring-1 ring-black/5 focus:outline-none overflow-hidden"
+                {item.children ? (
+                  <>
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={(e) => handleDropdownClick(item.name, e)}
+                      className={`text-gray-700 hover:text-blue-600 px-4 py-2.5 text-sm font-medium transition-all duration-200 rounded-xl hover:bg-blue-50/50 ${
+                        activeDropdown === item.name ? 'text-blue-600 bg-blue-50/50' : ''
+                      }`}
                     >
-                      <div className="py-1">
-                        {item.children.map((child) => (
-                          <motion.a
-                            key={child.name}
-                            href={child.href}
-                            whileHover={{ x: 4 }}
-                            className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50/50 hover:text-blue-600 transition-colors duration-200"
-                            onClick={() => setActiveDropdown(null)}
-                          >
-                            {child.name}
-                          </motion.a>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                      {item.name}
+                      <ChevronDown className={`ml-1 h-4 w-4 inline-block transition-transform duration-200 ${
+                        activeDropdown === item.name ? 'rotate-180' : ''
+                      }`} />
+                    </motion.button>
+                    <AnimatePresence>
+                      {activeDropdown === item.name && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute left-0 mt-2 w-64 rounded-xl shadow-xl bg-white/95 backdrop-blur-lg ring-1 ring-black/5 focus:outline-none overflow-hidden"
+                        >
+                          <div className="py-1">
+                            {item.children.map((child) => (
+                              <Link
+                                key={child.name}
+                                href={child.href}
+                                className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50/50 hover:text-blue-600 transition-colors duration-200"
+                                onClick={() => setActiveDropdown(null)}
+                              >
+                                {child.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </>
+                ) : (
+                  <Link href={item.href}>
+                    <motion.span
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className={`text-gray-700 hover:text-blue-600 px-4 py-2.5 text-sm font-medium transition-all duration-200 rounded-xl hover:bg-blue-50/50 block ${
+                        pathname === item.href ? 'text-blue-600 bg-blue-50/50' : ''
+                      }`}
+                    >
+                      {item.name}
+                    </motion.span>
+                  </Link>
+                )}
               </div>
             ))}
           </nav>
@@ -215,10 +234,9 @@ export default function Header() {
                               className="pl-4 space-y-1"
                             >
                               {item.children.map((child) => (
-                                <motion.a
+                                <Link
                                   key={child.name}
                                   href={child.href}
-                                  whileHover={{ x: 4 }}
                                   className="block px-4 py-2.5 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50/50 rounded-xl"
                                   onClick={() => {
                                     setIsMenuOpen(false);
@@ -226,21 +244,22 @@ export default function Header() {
                                   }}
                                 >
                                   {child.name}
-                                </motion.a>
+                                </Link>
                               ))}
                             </motion.div>
                           )}
                         </AnimatePresence>
                       </>
                     ) : (
-                      <motion.a
-                        whileTap={{ scale: 0.98 }}
+                      <Link
                         href={item.href}
-                        className="text-gray-700 hover:text-blue-600 block px-4 py-3 text-base font-medium rounded-xl hover:bg-blue-50/50 transition-all duration-200"
+                        className={`text-gray-700 hover:text-blue-600 block px-4 py-3 text-base font-medium rounded-xl hover:bg-blue-50/50 transition-all duration-200 ${
+                          pathname === item.href ? 'text-blue-600 bg-blue-50/50' : ''
+                        }`}
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {item.name}
-                      </motion.a>
+                      </Link>
                     )}
                   </div>
                 ))}

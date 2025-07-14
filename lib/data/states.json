@@ -4,30 +4,35 @@
       "id": "ca",
       "name": "California",
       "abbreviation": "CA",
+      "slug": "california",
       "description": "The Golden State - Known for its diverse landscape and vibrant cities"
     },
     {
       "id": "ny",
       "name": "New York",
       "abbreviation": "NY",
+      "slug": "new-york",
       "description": "The Empire State - Home to the iconic New York City and diverse regions"
     },
     {
       "id": "tx",
       "name": "Texas",
       "abbreviation": "TX",
+      "slug": "texas",
       "description": "The Lone Star State - Known for its size and unique culture"
     },
     {
       "id": "fl",
       "name": "Florida",
       "abbreviation": "FL",
+      "slug": "florida",
       "description": "The Sunshine State - Famous for its beaches and warm climate"
     },
     {
       "id": "il",
       "name": "Illinois",
       "abbreviation": "IL",
+      "slug": "illinois",
       "description": "The Prairie State - Home to Chicago and rich agricultural lands"
     }
   ]

@@ -1,4 +1,9 @@
 import { Service, Testimonial, FAQ } from '@/types';
+import statesData from './data/states.json';
+
+export const getState = (stateId: string) => {
+  return statesData.states.find(state => state.id.toLowerCase() === stateId.toLowerCase());
+};
 
 export const services: Service[] = [
   {

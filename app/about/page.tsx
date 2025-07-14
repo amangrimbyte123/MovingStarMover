@@ -1,110 +1,118 @@
-import Header from '@/components/sections/Header'
-import Footer from '@/components/sections/Footer'
-import { Metadata } from 'next'
+'use client';
 
-export const metadata: Metadata = {
-  title: 'About Us | MovingStar - Professional Moving Services',
-  description: 'Learn about MovingStar\'s history, mission, and commitment to providing exceptional moving services across the nation.',
-}
+import React from 'react';
+import { Shield, Users, Award, Star, Truck, Globe } from 'lucide-react';
+import Image from 'next/image';
+import Header from '@/components/sections/Header';
+import Footer from '@/components/sections/Footer';
 
-export default function AboutPage() {
+export default function About() {
   return (
-    <>
+    <main className="min-h-screen">
       <Header />
-      <main className="pt-20 lg:pt-24">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-b from-blue-50 to-white py-20 lg:py-32">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                About MovingStar
-              </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Your trusted partner in making moves that matter. We combine expertise, dedication, and innovation to deliver exceptional moving experiences.
+      
+      {/* Hero Section */}
+      <section className="pt-32 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              About
+              <span className="gradient-text"> MovingStarMover</span>
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Your trusted partner in making moves that matter. Professional, reliable, and customer-focused moving services.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Company Overview */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold mb-6">Our Story</h2>
+              <p className="text-gray-600 mb-6">
+                Founded with a vision to revolutionize the moving industry, MovingStarMover has grown from a local moving company to a nationwide leader in relocation services. Our commitment to excellence and customer satisfaction has earned us the trust of thousands of families and businesses across the country.
               </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Mission Section */}
-        <section className="py-16 lg:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
-                <p className="text-lg text-gray-600 mb-6">
-                  At MovingStar, our mission is to transform the moving experience through exceptional service, innovative solutions, and unwavering commitment to customer satisfaction.
-                </p>
-                <p className="text-lg text-gray-600">
-                  We strive to make every move seamless, stress-free, and successful, whether you're moving across the street or across the globe.
-                </p>
-              </div>
-              <div className="bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 p-8 rounded-2xl text-white">
-                <h3 className="text-2xl font-bold mb-4">Why Choose MovingStar?</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <span className="mr-3">✓</span>
-                    <span>Over 20 years of moving expertise</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-3">✓</span>
-                    <span>Fully licensed and insured services</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-3">✓</span>
-                    <span>Dedicated customer support team</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-3">✓</span>
-                    <span>Customized moving solutions</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Values Section */}
-        <section className="bg-gray-50 py-16 lg:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Core Values</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: 'Excellence',
-                  description: 'We maintain the highest standards in every aspect of our service.'
-                },
-                {
-                  title: 'Integrity',
-                  description: 'We operate with complete transparency and honesty in all our dealings.'
-                },
-                {
-                  title: 'Innovation',
-                  description: 'We continuously improve our services through modern solutions.'
-                },
-                {
-                  title: 'Reliability',
-                  description: 'We deliver on our promises, every time.'
-                },
-                {
-                  title: 'Customer Focus',
-                  description: 'Your satisfaction is our top priority.'
-                },
-                {
-                  title: 'Teamwork',
-                  description: 'We work together to ensure your move is successful.'
-                }
-              ].map((value, index) => (
-                <div key={index} className="bg-white p-6 rounded-xl shadow-md">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
-                  <p className="text-gray-600">{value.description}</p>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="flex items-center gap-3">
+                  <Shield className="w-8 h-8 text-blue-600" />
+                  <div>
+                    <h4 className="font-semibold">Licensed & Insured</h4>
+                    <p className="text-sm text-gray-500">Full protection</p>
+                  </div>
                 </div>
-              ))}
+                <div className="flex items-center gap-3">
+                  <Users className="w-8 h-8 text-blue-600" />
+                  <div>
+                    <h4 className="font-semibold">Expert Team</h4>
+                    <p className="text-sm text-gray-500">Trained professionals</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/team-working.jpg"
+                alt="MovingStarMover team at work"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl font-bold mb-2">10K+</div>
+              <div className="text-sm opacity-80">Successful Moves</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold mb-2">50+</div>
+              <div className="text-sm opacity-80">Cities Served</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold mb-2">100+</div>
+              <div className="text-sm opacity-80">Team Members</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold mb-2">4.9</div>
+              <div className="text-sm opacity-80">Customer Rating</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Core Values</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center p-6">
+              <Award className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-3">Excellence</h3>
+              <p className="text-gray-600">We strive for excellence in every move, ensuring your belongings are handled with the utmost care.</p>
+            </div>
+            <div className="text-center p-6">
+              <Star className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-3">Reliability</h3>
+              <p className="text-gray-600">Count on us to deliver on our promises, with transparent pricing and punctual service.</p>
+            </div>
+            <div className="text-center p-6">
+              <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-3">Customer Focus</h3>
+              <p className="text-gray-600">Your satisfaction is our priority. We go above and beyond to exceed expectations.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
-    </>
-  )
+    </main>
+  );
 } 
