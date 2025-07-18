@@ -34,6 +34,321 @@
       "abbreviation": "IL",
       "slug": "illinois",
       "description": "The Prairie State - Home to Chicago and rich agricultural lands"
+    },
+    {
+      "id": "al",
+      "name": "Alabama",
+      "abbreviation": "AL",
+      "slug": "alabama",
+      "description": "The Yellowhammer State - Known for its rich history and southern hospitality"
+    },
+    {
+      "id": "ak",
+      "name": "Alaska",
+      "abbreviation": "AK",
+      "slug": "alaska",
+      "description": "The Last Frontier - Famous for its vast wilderness and natural beauty"
+    },
+    {
+      "id": "az",
+      "name": "Arizona",
+      "abbreviation": "AZ",
+      "slug": "arizona",
+      "description": "The Grand Canyon State - Home to the Grand Canyon and desert landscapes"
+    },
+    {
+      "id": "ar",
+      "name": "Arkansas",
+      "abbreviation": "AR",
+      "slug": "arkansas",
+      "description": "The Natural State - Known for its mountains, caves, and hot springs"
+    },
+    {
+      "id": "co",
+      "name": "Colorado",
+      "abbreviation": "CO",
+      "slug": "colorado",
+      "description": "The Centennial State - Famous for the Rocky Mountains and outdoor recreation"
+    },
+    {
+      "id": "ct",
+      "name": "Connecticut",
+      "abbreviation": "CT",
+      "slug": "connecticut",
+      "description": "The Constitution State - Known for its colonial history and coastal cities"
+    },
+    {
+      "id": "de",
+      "name": "Delaware",
+      "abbreviation": "DE",
+      "slug": "delaware",
+      "description": "The First State - The first to ratify the U.S. Constitution"
+    },
+    {
+      "id": "ga",
+      "name": "Georgia",
+      "abbreviation": "GA",
+      "slug": "georgia",
+      "description": "The Peach State - Known for its peaches and southern charm"
+    },
+    {
+      "id": "hi",
+      "name": "Hawaii",
+      "abbreviation": "HI",
+      "slug": "hawaii",
+      "description": "The Aloha State - Famous for its islands, beaches, and volcanoes"
+    },
+    {
+      "id": "id",
+      "name": "Idaho",
+      "abbreviation": "ID",
+      "slug": "idaho",
+      "description": "The Gem State - Known for its potatoes and scenic landscapes"
+    },
+    {
+      "id": "in",
+      "name": "Indiana",
+      "abbreviation": "IN",
+      "slug": "indiana",
+      "description": "The Hoosier State - Known for the Indianapolis 500 and farmland"
+    },
+    {
+      "id": "ia",
+      "name": "Iowa",
+      "abbreviation": "IA",
+      "slug": "iowa",
+      "description": "The Hawkeye State - Known for its agriculture and rolling plains"
+    },
+    {
+      "id": "ks",
+      "name": "Kansas",
+      "abbreviation": "KS",
+      "slug": "kansas",
+      "description": "The Sunflower State - Known for its prairies and sunflowers"
+    },
+    {
+      "id": "ky",
+      "name": "Kentucky",
+      "abbreviation": "KY",
+      "slug": "kentucky",
+      "description": "The Bluegrass State - Famous for horse racing and bourbon"
+    },
+    {
+      "id": "la",
+      "name": "Louisiana",
+      "abbreviation": "LA",
+      "slug": "louisiana",
+      "description": "The Pelican State - Known for its unique culture and Mardi Gras"
+    },
+    {
+      "id": "me",
+      "name": "Maine",
+      "abbreviation": "ME",
+      "slug": "maine",
+      "description": "The Pine Tree State - Famous for its rocky coastline and seafood"
+    },
+    {
+      "id": "md",
+      "name": "Maryland",
+      "abbreviation": "MD",
+      "slug": "maryland",
+      "description": "The Old Line State - Known for its Chesapeake Bay and blue crabs"
+    },
+    {
+      "id": "ma",
+      "name": "Massachusetts",
+      "abbreviation": "MA",
+      "slug": "massachusetts",
+      "description": "The Bay State - Rich in colonial history and education"
+    },
+    {
+      "id": "mi",
+      "name": "Michigan",
+      "abbreviation": "MI",
+      "slug": "michigan",
+      "description": "The Great Lakes State - Surrounded by the Great Lakes"
+    },
+    {
+      "id": "mn",
+      "name": "Minnesota",
+      "abbreviation": "MN",
+      "slug": "minnesota",
+      "description": "The North Star State - Land of 10,000 Lakes"
+    },
+    {
+      "id": "ms",
+      "name": "Mississippi",
+      "abbreviation": "MS",
+      "slug": "mississippi",
+      "description": "The Magnolia State - Known for its music and river"
+    },
+    {
+      "id": "mo",
+      "name": "Missouri",
+      "abbreviation": "MO",
+      "slug": "missouri",
+      "description": "The Show-Me State - Known for the Gateway Arch and Ozarks"
+    },
+    {
+      "id": "mt",
+      "name": "Montana",
+      "abbreviation": "MT",
+      "slug": "montana",
+      "description": "The Treasure State - Known for its mountains and wide-open spaces"
+    },
+    {
+      "id": "ne",
+      "name": "Nebraska",
+      "abbreviation": "NE",
+      "slug": "nebraska",
+      "description": "The Cornhusker State - Known for its prairies and agriculture"
+    },
+    {
+      "id": "nv",
+      "name": "Nevada",
+      "abbreviation": "NV",
+      "slug": "nevada",
+      "description": "The Silver State - Famous for Las Vegas and deserts"
+    },
+    {
+      "id": "nh",
+      "name": "New Hampshire",
+      "abbreviation": "NH",
+      "slug": "new-hampshire",
+      "description": "The Granite State - Known for its mountains and forests"
+    },
+    {
+      "id": "nj",
+      "name": "New Jersey",
+      "abbreviation": "NJ",
+      "slug": "new-jersey",
+      "description": "The Garden State - Known for its shorelines and cities"
+    },
+    {
+      "id": "nm",
+      "name": "New Mexico",
+      "abbreviation": "NM",
+      "slug": "new-mexico",
+      "description": "The Land of Enchantment - Known for its desert landscapes and culture"
+    },
+    {
+      "id": "nc",
+      "name": "North Carolina",
+      "abbreviation": "NC",
+      "slug": "north-carolina",
+      "description": "The Tar Heel State - Known for its beaches and mountains"
+    },
+    {
+      "id": "nd",
+      "name": "North Dakota",
+      "abbreviation": "ND",
+      "slug": "north-dakota",
+      "description": "The Peace Garden State - Known for its plains and agriculture"
+    },
+    {
+      "id": "oh",
+      "name": "Ohio",
+      "abbreviation": "OH",
+      "slug": "ohio",
+      "description": "The Buckeye State - Known for its cities and sports"
+    },
+    {
+      "id": "ok",
+      "name": "Oklahoma",
+      "abbreviation": "OK",
+      "slug": "oklahoma",
+      "description": "The Sooner State - Known for its Native American history"
+    },
+    {
+      "id": "or",
+      "name": "Oregon",
+      "abbreviation": "OR",
+      "slug": "oregon",
+      "description": "The Beaver State - Known for its forests and coastline"
+    },
+    {
+      "id": "pa",
+      "name": "Pennsylvania",
+      "abbreviation": "PA",
+      "slug": "pennsylvania",
+      "description": "The Keystone State - Rich in American history"
+    },
+    {
+      "id": "ri",
+      "name": "Rhode Island",
+      "abbreviation": "RI",
+      "slug": "rhode-island",
+      "description": "The Ocean State - The smallest state, known for its beaches"
+    },
+    {
+      "id": "sc",
+      "name": "South Carolina",
+      "abbreviation": "SC",
+      "slug": "south-carolina",
+      "description": "The Palmetto State - Known for its historic cities and beaches"
+    },
+    {
+      "id": "sd",
+      "name": "South Dakota",
+      "abbreviation": "SD",
+      "slug": "south-dakota",
+      "description": "The Mount Rushmore State - Home to Mount Rushmore"
+    },
+    {
+      "id": "tn",
+      "name": "Tennessee",
+      "abbreviation": "TN",
+      "slug": "tennessee",
+      "description": "The Volunteer State - Known for its music and mountains"
+    },
+    {
+      "id": "ut",
+      "name": "Utah",
+      "abbreviation": "UT",
+      "slug": "utah",
+      "description": "The Beehive State - Known for its national parks and skiing"
+    },
+    {
+      "id": "vt",
+      "name": "Vermont",
+      "abbreviation": "VT",
+      "slug": "vermont",
+      "description": "The Green Mountain State - Known for its forests and maple syrup"
+    },
+    {
+      "id": "va",
+      "name": "Virginia",
+      "abbreviation": "VA",
+      "slug": "virginia",
+      "description": "The Old Dominion - Rich in American history"
+    },
+    {
+      "id": "wa",
+      "name": "Washington",
+      "abbreviation": "WA",
+      "slug": "washington",
+      "description": "The Evergreen State - Known for its forests and tech industry"
+    },
+    {
+      "id": "wv",
+      "name": "West Virginia",
+      "abbreviation": "WV",
+      "slug": "west-virginia",
+      "description": "The Mountain State - Known for its mountains and outdoor recreation"
+    },
+    {
+      "id": "wi",
+      "name": "Wisconsin",
+      "abbreviation": "WI",
+      "slug": "wisconsin",
+      "description": "The Badger State - Known for its dairy and lakes"
+    },
+    {
+      "id": "wy",
+      "name": "Wyoming",
+      "abbreviation": "WY",
+      "slug": "wyoming",
+      "description": "The Equality State - Known for Yellowstone and wide-open spaces"
     }
   ]
 } 

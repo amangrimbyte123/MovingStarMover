@@ -7,16 +7,18 @@ import QuoteForm from '@/components/sections/QuoteForm';
 import Testimonials from '@/components/sections/Testimonials';
 import Contact from '@/components/sections/Contact';
 import Footer from '@/components/sections/Footer';
+import Description from '@/components/sections/Description';
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Header />
       <Hero />
-      <About />
+      <Description/>
       <Services />
-      <Process />
+      <About />
       <QuoteForm />
+      <Process />
       <Testimonials />
       <Contact />
       <Footer />

@@ -1,144 +1,75 @@
 import React from 'react';
-import { services } from '@/lib/data';
-import { Truck, Home, Building, Car, Plane, Shield, Clock, Star } from 'lucide-react';
-import Button from '../ui/Button';
-import Image from 'next/image';
-import Link from 'next/link';
 
-const serviceIcons = {
-  'Household Moving': Truck,
-  'Long Distance Moving': Home,
-  'Corporate Moving': Building,
-  'Auto Transport': Car,
-  'International Moving': Plane,
-  'Military Moving': Shield
-};
-
-const serviceImages = {
-  'Household Moving': '/images/furniture-moving.jpg',
-  'Long Distance Moving': '/images/moving-truck.jpg',
-  'Corporate Moving': '/images/office-moving.jpg',
-  'Auto Transport': '/images/auto-transport.jpg',
-  'International Moving': '/images/international-shipping.jpg',
-  'Military Moving': '/images/military-moving.jpg'
-};
+const services = [
+  {
+    icon: (
+      <svg className="w-12 h-12 mx-auto text-blue-900" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M3 13.5V7a2 2 0 012-2h2.5M21 13.5V7a2 2 0 00-2-2h-2.5M3 13.5l9 6 9-6M3 13.5V17a2 2 0 002 2h2.5m13.5-5.5V17a2 2 0 01-2 2h-2.5" /></svg>
+    ),
+    title: 'HOUSEHOLD MOVING',
+    desc: 'We offer personal, professional service for all residential moves, including full-service packing, loading, and more.',
+    link: '#',
+  },
+  {
+    icon: (
+      <svg className="w-12 h-12 mx-auto text-blue-900" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M2 12h20M12 2a15.3 15.3 0 010 20" /></svg>
+    ),
+    title: 'INTERNATIONAL',
+    desc: 'North American moves all over the world with the same care as moving to a new country.',
+    link: '#',
+  },
+  {
+    icon: (
+      <svg className="w-12 h-12 mx-auto text-blue-900" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M16 3v4M8 3v4" /></svg>
+    ),
+    title: 'CORPORATE',
+    desc: 'We’ll handle the logistics and complexity of corporate moves for employees and their families.',
+    link: '#',
+  },
+  {
+    icon: (
+      <svg className="w-12 h-12 mx-auto text-blue-900" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="13" rx="2" /><path d="M6 3v4M18 3v4" /></svg>
+    ),
+    title: 'OFFICE MOVING',
+    desc: 'Our office moving services ensure minimal disruption with efficient planning and day-to-day operations.',
+    link: '#',
+  },
+  {
+    icon: (
+      <svg className="w-12 h-12 mx-auto text-blue-900" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="7" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>
+    ),
+    title: 'MOVING SERVICES',
+    desc: 'Every move is unique and we provide a range of services including packing, storage, and more.',
+    link: '#',
+  },
+  {
+    icon: (
+      <svg className="w-12 h-12 mx-auto text-blue-900" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="10" rx="2" /><path d="M8 17v2a2 2 0 002 2h4a2 2 0 002-2v-2" /></svg>
+    ),
+    title: 'LONG DISTANCE',
+    desc: 'Our team will help you safely relocate anywhere in the country with expert care for your items.',
+    link: '#',
+  },
+];
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-50" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-      }}></div>
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 rounded-full px-4 py-2 mb-6">
-            <Star className="w-4 h-4" />
-            <span className="text-sm font-medium">Our Services</span>
+    <section className="w-full bg-white py-16 px-4" id="services">
+      <div className="max-w-4xl mx-auto text-center mb-12">
+        <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-2">Why Choose North American Moving Company</h2>
+        <p className="text-gray-700 max-w-2xl mx-auto mb-8 text-base md:text-lg">
+          North American Van Lines is a top-rated moving company in the U.S. and Canada—and has been for over 90 years! Since 1933, we’ve helped families, individuals and corporations achieve hassle-free relocations, whether across town or across the country. North American movers are courteous, reliable, and trusted throughout North America and beyond. Contact us today for a free quote or estimate.
+        </p>
+        <h3 className="text-xl md:text-2xl font-semibold text-blue-900 mt-8 mb-4">Moving Services from North American Van Lines</h3>
+      </div>
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        {services.map((service, idx) => (
+          <div key={idx} className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow hover:shadow-md transition-shadow border-t-4 border-blue-900">
+            {service.icon}
+            <h4 className="mt-4 text-lg font-bold text-blue-900 uppercase tracking-wide mb-1">{service.title}</h4>
+            <p className="mt-2 text-gray-700 text-sm mb-4">{service.desc}</p>
+            <a href={service.link} className="text-red-600 font-semibold text-sm hover:underline">LEARN MORE</a>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Complete Moving
-            <span className="gradient-text"> Solutions</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            From local moves to international relocations, we provide comprehensive 
-            moving solutions tailored to your specific needs with expert care.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => {
-            const IconComponent = serviceIcons[service.title as keyof typeof serviceIcons] || Truck;
-            const serviceImage = serviceImages[service.title as keyof typeof serviceImages];
-            
-            return (
-              <div 
-                key={service.id} 
-                className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover-lift border border-gray-100 overflow-hidden"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {/* Service Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={serviceImage || '/images/moving-truck.jpg'}
-                    alt={service.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  
-                  {/* Icon overlay */}
-                  <div className="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                    <IconComponent className="w-6 h-6 text-blue-600" />
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-8 relative z-10">
-                  {/* Title */}
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
-                    {service.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {service.description}
-                  </p>
-
-                  {/* Features */}
-                  <div className="space-y-3 mb-8">
-                    {service.features.slice(0, 3).map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></div>
-                        <span className="text-sm text-gray-600">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Price and CTA */}
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                    <div className="text-2xl font-bold text-blue-600">
-                      {service.price}
-                    </div>
-                    <Link href={service.slug === 'long-distance-movers' ? `/long-distance-movers` : '#'}>
-                      <Button 
-                        size="md" 
-                        variant="primary"
-                        className="hover:scale-105 transition-transform duration-200 shadow-lg font-medium"
-                      >
-                        {service.slug === 'long-distance-movers' ? 'Learn More' : 'Get Quote'}
-                      </Button>
-                    </Link>
-                  </div>
-
-                  {/* Additional features indicator */}
-                  {service.features.length > 3 && (
-                    <div className="mt-4 text-sm text-gray-500">
-                      +{service.features.length - 3} more features
-                    </div>
-                  )}
-                </div>
-
-                {/* Decorative corner */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-bl-2xl z-0"></div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-4 bg-white rounded-2xl p-6 shadow-lg">
-            <div className="flex items-center gap-2 text-gray-600">
-              <Clock className="w-5 h-5 text-blue-600" />
-              <span className="font-medium">Need immediate assistance?</span>
-            </div>
-            <Button variant="primary">
-              Call Now
-            </Button>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );

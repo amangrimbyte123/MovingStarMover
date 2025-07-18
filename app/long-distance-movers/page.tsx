@@ -8,6 +8,7 @@ import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import Button from '@/components/ui/Button';
 import statesData from '@/lib/data/states.json';
+import Hero from '@/components/sections/Hero';
 
 export default function LongDistanceMovers() {
   const [mounted, setMounted] = useState(false);
@@ -33,129 +34,7 @@ export default function LongDistanceMovers() {
       <Header />
       
       {/* Hero Section - Updated with parallax effect and floating elements */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 transform transition-transform duration-1000 hover:scale-105">
-          <Image
-            src="/images/moving-truck.jpg"
-            alt="Long distance moving truck"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-purple-900/85 to-indigo-900/90"></div>
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-center lg:text-left animate-fade-in-up">
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 mb-6 hover:bg-white/20 transition-all">
-                <Star className="w-5 h-5 text-yellow-400 animate-pulse" />
-                <span className="text-white/90 text-sm">95+ Years of Excellence in Moving</span>
-              </div>
-              
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
-                <span className="text-white animate-fade-in-left">Expert Long Distance</span>
-                <br />
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 animate-gradient">Moving Services</span>
-              </h1>
-              
-              <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed">
-                Professional interstate moving services across all 50 states and 130+ countries.
-                <br />96% customer satisfaction rate with guaranteed pricing.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button 
-                  size="lg" 
-                  variant="primary"
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transform hover:scale-105 transition-all"
-                >
-                  Get Free Quote
-                  <ArrowRight className="ml-2 w-5 h-5 animate-bounce" />
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
-                >
-                  <Phone className="mr-2 w-5 h-5 animate-pulse" />
-                  24/7 Support
-                </Button>
-              </div>
-            </div>
-
-            {/* Quick Quote Form - Updated with modern glassmorphism */}
-            <div className="glass rounded-2xl p-8 backdrop-blur-md border border-white/20 shadow-2xl hover:shadow-purple-500/20 transition-all duration-500">
-              <h3 className="text-2xl font-semibold text-white mb-6">Get Your Free Moving Quote</h3>
-              <form className="space-y-4">
-                <div className="space-y-2">
-                  <label className="text-white/80 text-sm font-medium">Moving From</label>
-                  <div className="relative">
-                    <MapPin className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/50 w-5 h-5" />
-                    <input 
-                      type="text" 
-                      placeholder="Enter ZIP code or City"
-                      className="w-full pl-12 pr-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-white/80 text-sm font-medium">Moving To</label>
-                  <div className="relative">
-                    <MapPin className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/50 w-5 h-5" />
-                    <input 
-                      type="text" 
-                      placeholder="Enter ZIP code or City"
-                      className="w-full pl-12 pr-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all"
-                    />
-                  </div>
-                </div>
-                {mounted && (
-                  <div className="space-y-2">
-                    <label className="text-white/80 text-sm font-medium">Moving Date</label>
-                    <div className="relative">
-                      <Calendar className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/50 w-5 h-5" />
-                      <input 
-                        type="date" 
-                        name="moveDate"
-                        value={formData.moveDate}
-                        onChange={handleInputChange}
-                        className="w-full pl-12 pr-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all"
-                      />
-                    </div>
-                  </div>
-                )}
-                {mounted && (
-                  <div className="space-y-2">
-                    <label className="text-white/80 text-sm font-medium">Home Size</label>
-                    <select 
-                      name="homeSize"
-                      value={formData.homeSize}
-                      onChange={handleInputChange}
-                      className="w-full pl-12 pr-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all"
-                    >
-                      <option value="">Select home size</option>
-                      <option value="studio">Studio</option>
-                      <option value="1bed">1 Bedroom</option>
-                      <option value="2bed">2 Bedrooms</option>
-                      <option value="3bed">3 Bedrooms</option>
-                      <option value="4bed">4+ Bedrooms</option>
-                    </select>
-                  </div>
-                )}
-                <Button 
-                  size="lg"
-                  variant="primary"
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transform hover:scale-102 transition-all"
-                >
-                  Calculate My Quote
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+     <Hero/>
 
       {/* Services Section - Updated with alternating layout */}
       <section className="py-20 bg-gradient-to-b from-white to-gray-50">
@@ -639,34 +518,25 @@ export default function LongDistanceMovers() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {statesData.states.map((state) => (
-              <Link 
-                key={state.id} 
-                href={`/long-distance-movers/${state.id}`}
-                className="group relative"
-              >
-                <div className="rounded-xl p-6 bg-white border border-gray-200 hover:border-indigo-500/30 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 rounded-bl-full transform translate-x-16 -translate-y-16 group-hover:translate-x-20 group-hover:-translate-y-20 transition-transform"></div>
-                  
-                  <div className="relative">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl group-hover:scale-110 transition-transform">
-                        <MapPin className="w-6 h-6 text-white" />
-                      </div>
-                      <h3 className="text-xl font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
-                        {state.name}
-                      </h3>
-                    </div>
-                    <p className="text-gray-600 mb-4">{state.description}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-500">{state.abbreviation} Moving Services</span>
-                      <ArrowRight className="w-5 h-5 text-indigo-600 transform group-hover:translate-x-2 transition-transform" />
-                    </div>
+          <div className="w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              {statesData.states.map((state) => (
+                <Link 
+                  key={state.id} 
+                  href={`/long-distance-movers/${state.id}`}
+                  className="group focus:outline-none"
+                >
+                  <div className="flex items-center gap-4 bg-white rounded-xl shadow-md border border-gray-100 p-5 hover:shadow-lg hover:border-blue-400 transition-all duration-200 focus-within:ring-2 focus-within:ring-blue-300">
+                    <span className="inline-flex items-center justify-center w-10 h-10 bg-blue-100 rounded-lg">
+                      <MapPin className="w-6 h-6 text-blue-600" />
+                    </span>
+                    <span className="font-semibold text-gray-900 text-lg truncate" title={state.name}>
+                      {state.name}
+                    </span>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>

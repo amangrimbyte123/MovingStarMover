@@ -9,6 +9,7 @@ import citiesData from '@/lib/data/cities.json';
 import { State, States, Cities, City } from '@/types';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
+import Hero from '@/components/sections/Hero';
 
 type PageProps = {
   params: Promise<{
@@ -45,47 +46,9 @@ export default function StatePage({ params, searchParams }: PageProps) {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50 pt-16 lg:pt-20">
+      <main className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50 ">
         {/* Hero Section with Gradient Background */}
-        <section className="relative py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/90 via-purple-600/85 to-indigo-600/90"></div>
-          <div className="absolute inset-0 bg-[url('/images/hero-background.jpg')] bg-cover bg-center opacity-20"></div>
-          
-          <div className="relative container mx-auto px-4 z-10">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 mb-6">
-                <Star className="w-5 h-5 text-yellow-400" />
-                <span className="text-white/90 text-sm">Rated #1 Moving Company in {state.name}</span>
-              </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-                Long Distance Moving Services in{' '}
-                <span className="gradient-text bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200">
-                  {state.name}
-                </span>
-              </h1>
-              <p className="text-lg text-white/90 mb-8">
-                Professional and reliable moving solutions tailored to your needs. 
-                Trust our experienced team for a seamless relocation experience.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link 
-                  href="/cost-calculator" 
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-white to-blue-50 text-blue-600 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                >
-                  Get Free Quote
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-                <a 
-                  href="tel:8006667777"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-full font-semibold hover:bg-white/20 transition-all duration-300"
-                >
-                  <Phone className="w-5 h-5" />
-                  (800) 666-7777
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+       <Hero/>
 
         {/* Trust Indicators Section */}
         <section className="py-12 bg-white">
@@ -284,7 +247,7 @@ export default function StatePage({ params, searchParams }: PageProps) {
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {(statesData as States).states
+              {(statesData as States).states.slice(0, 9)
                 .filter(s => s.id !== state.id)
                 .map(otherState => (
                   <Link
@@ -318,22 +281,20 @@ export default function StatePage({ params, searchParams }: PageProps) {
             
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div className="bg-white rounded-xl shadow-lg p-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="flex flex-wrap gap-6">
                   {cities.map((city) => (
                     <Link 
                       key={city.id}
                       href={`/long-distance-movers/${stateId}/${city.id}`}
                       className="group cursor-pointer"
                     >
-                      <div className="flex items-center gap-4 p-4 rounded-lg border border-gray-100 hover:border-blue-200 transition-all duration-300">
-                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                          <MapPin className="w-6 h-6 text-white" />
-                        </div>
+                      <div className="flex flex-wrap items-center gap-4 p-2 rounded-lg border border-gray-100 hover:border-blue-200 transition-all duration-300 w-fit">
+                        
                         <div>
-                          <h3 className="text-lg font-semibold text-blue-900 group-hover:text-blue-600 transition-colors">
+                          <h3 className="text-sm font-semibold text-blue-900 group-hover:text-blue-600 transition-colors w-fit">
                             {city.name}
                           </h3>
-                          <p className="text-sm text-gray-600">{city.description}</p>
+                        
                         </div>
                       </div>
                     </Link>

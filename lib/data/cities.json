@@ -15,13 +15,148 @@
         "id": "san-diego",
         "name": "San Diego",
         "description": "Famous for its perfect weather and beautiful beaches"
+      },
+      {
+        "id": "sacramento",
+        "name": "Sacramento",
+        "description": "The capital city of California, known for its history and government"
+      },
+      {
+        "id": "san-jose",
+        "name": "San Jose",
+        "description": "The heart of Silicon Valley and a major tech hub"
+      },
+      {
+        "id": "fresno",
+        "name": "Fresno",
+        "description": "A major city in the Central Valley, known for agriculture"
+      },
+      {
+        "id": "oakland",
+        "name": "Oakland",
+        "description": "A vibrant port city with a rich cultural scene"
+      },
+      {
+        "id": "long-beach",
+        "name": "Long Beach",
+        "description": "A coastal city famous for its waterfront attractions"
+      },
+      {
+        "id": "bakersfield",
+        "name": "Bakersfield",
+        "description": "Known for its country music and oil production"
+      },
+      {
+        "id": "anaheim",
+        "name": "Anaheim",
+        "description": "Home to Disneyland Resort and major sports teams"
+      },
+      {
+        "id": "santa-ana",
+        "name": "Santa Ana",
+        "description": "A city with a vibrant downtown and cultural diversity"
+      },
+      {
+        "id": "riverside",
+        "name": "Riverside",
+        "description": "Known for its historic Mission Inn and citrus industry"
+      },
+      {
+        "id": "stockton",
+        "name": "Stockton",
+        "description": "A city on the San Joaquin River, known for its port"
+      },
+      {
+        "id": "irvine",
+        "name": "Irvine",
+        "description": "A master-planned city known for its safety and education"
+      },
+      {
+        "id": "chula-vista",
+        "name": "Chula Vista",
+        "description": "A city near San Diego, known for its parks and bayfront"
+      },
+      {
+        "id": "fremont",
+        "name": "Fremont",
+        "description": "A city in the East Bay, part of Silicon Valley"
+      },
+      {
+        "id": "modesto",
+        "name": "Modesto",
+        "description": "Known for its agricultural production and classic car culture"
+      },
+      {
+        "id": "san-bernardino",
+        "name": "San Bernardino",
+        "description": "A city with a rich history on Route 66"
+      },
+      {
+        "id": "oxnard",
+        "name": "Oxnard",
+        "description": "A coastal city known for its beaches and strawberry festival"
+      },
+      {
+        "id": "fontana",
+        "name": "Fontana",
+        "description": "A city in San Bernardino County, known for its speedway"
+      },
+      {
+        "id": "moreno-valley",
+        "name": "Moreno Valley",
+        "description": "A rapidly growing city in the Inland Empire"
+      },
+      {
+        "id": "huntington-beach",
+        "name": "Huntington Beach",
+        "description": "Surf City USA, famous for its beaches and surf culture"
+      },
+      {
+        "id": "glendale",
+        "name": "Glendale",
+        "description": "A city in Los Angeles County, known for its shopping and dining"
+      },
+      {
+        "id": "santa-clarita",
+        "name": "Santa Clarita",
+        "description": "A family-friendly city with Six Flags Magic Mountain"
+      },
+      {
+        "id": "garden-grove",
+        "name": "Garden Grove",
+        "description": "Known for its annual Strawberry Festival and diverse community"
+      },
+      {
+        "id": "oceanside",
+        "name": "Oceanside",
+        "description": "A coastal city with a historic pier and harbor"
+      },
+      {
+        "id": "rancho-cucamonga",
+        "name": "Rancho Cucamonga",
+        "description": "A city at the foothills of the San Gabriel Mountains"
+      },
+      {
+        "id": "santa-rosa",
+        "name": "Santa Rosa",
+        "description": "The largest city in Sonoma County, heart of wine country"
+      },
+      {
+        "id": "ontario",
+        "name": "Ontario",
+        "description": "Known for its international airport and convention center"
+      },
+      {
+        "id": "elk-grove",
+        "name": "Elk Grove",
+        "description": "A fast-growing city just south of Sacramento"
       }
     ],
     "ny": [
       {
         "id": "new-york-city",
         "name": "New York City",
-        "description": "The city that never sleeps"
+        "description": "The largest city in the U.S., known as the Big Apple"
       },
       {
         "id": "buffalo",
@@ -29,43 +164,408 @@
         "description": "Known for its architecture and proximity to Niagara Falls"
       },
       {
+        "id": "rochester",
+        "name": "Rochester",
+        "description": "A city on Lake Ontario, known for its innovation and culture"
+      },
+      {
+        "id": "yonkers",
+        "name": "Yonkers",
+        "description": "A vibrant city just north of Manhattan"
+      },
+      {
+        "id": "syracuse",
+        "name": "Syracuse",
+        "description": "Known for its university and snowy winters"
+      },
+      {
         "id": "albany",
         "name": "Albany",
         "description": "The capital city of New York State"
+      },
+      {
+        "id": "new-rochelle",
+        "name": "New Rochelle",
+        "description": "A city in Westchester County with a rich history"
+      },
+      {
+        "id": "mount-vernon",
+        "name": "Mount Vernon",
+        "description": "A diverse city bordering the Bronx"
+      },
+      {
+        "id": "schenectady",
+        "name": "Schenectady",
+        "description": "Known for its role in the American industrial revolution"
+      },
+      {
+        "id": "utica",
+        "name": "Utica",
+        "description": "A city in the Mohawk Valley, known for its cultural diversity"
+      },
+      {
+        "id": "white-plains",
+        "name": "White Plains",
+        "description": "A commercial hub in Westchester County"
+      },
+      {
+        "id": "hempstead",
+        "name": "Hempstead",
+        "description": "A large town on Long Island"
+      },
+      {
+        "id": "troy",
+        "name": "Troy",
+        "description": "A city on the Hudson River, known for its Victorian architecture"
+      },
+      {
+        "id": "niagara-falls",
+        "name": "Niagara Falls",
+        "description": "Famous for the iconic waterfalls on the U.S.-Canada border"
+      },
+      {
+        "id": "binghamton",
+        "name": "Binghamton",
+        "description": "A city in the Southern Tier, known for its carousel collection"
+      },
+      {
+        "id": "freeport",
+        "name": "Freeport",
+        "description": "A village on Long Island with a popular marina"
+      },
+      {
+        "id": "valley-stream",
+        "name": "Valley Stream",
+        "description": "A suburban village in Nassau County"
+      },
+      {
+        "id": "long-beach-ny",
+        "name": "Long Beach",
+        "description": "A city on Long Island known for its beaches"
+      },
+      {
+        "id": "poughkeepsie",
+        "name": "Poughkeepsie",
+        "description": "A city in the Hudson Valley, home to Vassar College"
+      },
+      {
+        "id": "rome",
+        "name": "Rome",
+        "description": "A city in central New York with a rich history"
+      },
+      {
+        "id": "north-tonawanda",
+        "name": "North Tonawanda",
+        "description": "A city between Buffalo and Niagara Falls"
+      },
+      {
+        "id": "jamestown",
+        "name": "Jamestown",
+        "description": "Known for its comedy history and Lucille Ball"
+      },
+      {
+        "id": "elmira",
+        "name": "Elmira",
+        "description": "A city in the Southern Tier, known for its glider history"
+      },
+      {
+        "id": "newburgh",
+        "name": "Newburgh",
+        "description": "A city on the Hudson River with a revitalized waterfront"
+      },
+      {
+        "id": "saratoga-springs",
+        "name": "Saratoga Springs",
+        "description": "Famous for its horse racing and mineral springs"
+      },
+      {
+        "id": "amherst",
+        "name": "Amherst",
+        "description": "A large suburb of Buffalo, home to the University at Buffalo"
       }
     ],
     "tx": [
       {
         "id": "houston",
         "name": "Houston",
-        "description": "The largest city in Texas, known for space exploration"
+        "description": "The largest city in Texas, known for its space center and energy industry"
+      },
+      {
+        "id": "san-antonio",
+        "name": "San Antonio",
+        "description": "Famous for the Alamo and its vibrant River Walk"
       },
       {
         "id": "dallas",
         "name": "Dallas",
-        "description": "A major commercial and cultural hub"
+        "description": "A major city known for its cultural attractions and business hub"
       },
       {
         "id": "austin",
         "name": "Austin",
-        "description": "The state capital and technology hub"
+        "description": "The capital of Texas, known for its live music and tech scene"
+      },
+      {
+        "id": "fort-worth",
+        "name": "Fort Worth",
+        "description": "Known for its Western heritage and vibrant arts district"
+      },
+      {
+        "id": "el-paso",
+        "name": "El Paso",
+        "description": "A border city with rich culture and desert landscapes"
+      },
+      {
+        "id": "arlington",
+        "name": "Arlington",
+        "description": "Home to major sports teams and amusement parks"
+      },
+      {
+        "id": "corpus-christi",
+        "name": "Corpus Christi",
+        "description": "A coastal city known for its beaches and bay"
+      },
+      {
+        "id": "plano",
+        "name": "Plano",
+        "description": "A city in the Dallas metroplex, known for its corporate headquarters"
+      },
+      {
+        "id": "laredo",
+        "name": "Laredo",
+        "description": "A border city with a strong Hispanic heritage"
+      },
+      {
+        "id": "lubbock",
+        "name": "Lubbock",
+        "description": "Known for Texas Tech University and its music scene"
+      },
+      {
+        "id": "garland",
+        "name": "Garland",
+        "description": "A large suburb of Dallas with diverse industries"
+      },
+      {
+        "id": "irving",
+        "name": "Irving",
+        "description": "A business hub in the Dallas-Fort Worth metroplex"
+      },
+      {
+        "id": "amarillo",
+        "name": "Amarillo",
+        "description": "Known for its cattle industry and the Cadillac Ranch"
+      },
+      {
+        "id": "grand-prairie",
+        "name": "Grand Prairie",
+        "description": "A city with family attractions and outdoor recreation"
+      },
+      {
+        "id": "brownsville",
+        "name": "Brownsville",
+        "description": "A border city with a rich history and wildlife refuges"
+      },
+      {
+        "id": "mckinney",
+        "name": "McKinney",
+        "description": "A fast-growing city with a charming historic downtown"
+      },
+      {
+        "id": "frisco",
+        "name": "Frisco",
+        "description": "A rapidly growing city known for sports and shopping"
+      },
+      {
+        "id": "pasadena-tx",
+        "name": "Pasadena",
+        "description": "Known for its annual rodeo and proximity to Houston"
+      },
+      {
+        "id": "mesquite",
+        "name": "Mesquite",
+        "description": "A Dallas suburb known for its rodeo and family fun"
+      },
+      {
+        "id": "killeen",
+        "name": "Killeen",
+        "description": "Home to Fort Cavazos, a major U.S. Army base"
+      },
+      {
+        "id": "mcallen",
+        "name": "McAllen",
+        "description": "A city in the Rio Grande Valley, known for shopping and culture"
+      },
+      {
+        "id": "waco",
+        "name": "Waco",
+        "description": "Known for Baylor University and Magnolia Market"
+      },
+      {
+        "id": "carrollton",
+        "name": "Carrollton",
+        "description": "A diverse suburb in the Dallas-Fort Worth area"
+      },
+      {
+        "id": "midland",
+        "name": "Midland",
+        "description": "A city in West Texas, known for oil and gas industry"
+      },
+      {
+        "id": "denton",
+        "name": "Denton",
+        "description": "A college town with a vibrant music scene"
+      },
+      {
+        "id": "ab-ilene",
+        "name": "Abilene",
+        "description": "Known for its frontier history and cultural attractions"
+      },
+      {
+        "id": "beaumont",
+        "name": "Beaumont",
+        "description": "A city in Southeast Texas, known for its oil history"
+      },
+      {
+        "id": "round-rock",
+        "name": "Round Rock",
+        "description": "A fast-growing city near Austin, known for tech and sports"
+      },
+      {
+        "id": "pearland",
+        "name": "Pearland",
+        "description": "A Houston suburb with rapid growth and family-friendly amenities"
       }
     ],
     "fl": [
       {
-        "id": "miami",
-        "name": "Miami",
-        "description": "Known for its beaches and vibrant culture"
+        "id": "jacksonville",
+        "name": "Jacksonville",
+        "description": "The largest city in Florida by area, known for its beaches and riverfront"
       },
       {
-        "id": "orlando",
-        "name": "Orlando",
-        "description": "Home to world-famous theme parks"
+        "id": "miami",
+        "name": "Miami",
+        "description": "A vibrant city famous for its nightlife, beaches, and Latin culture"
       },
       {
         "id": "tampa",
         "name": "Tampa",
-        "description": "A major business center with beautiful beaches"
+        "description": "A Gulf Coast city known for its business center and historic Ybor City"
+      },
+      {
+        "id": "orlando",
+        "name": "Orlando",
+        "description": "Home to world-famous theme parks like Disney World and Universal Studios"
+      },
+      {
+        "id": "st-petersburg",
+        "name": "St. Petersburg",
+        "description": "Known for its sunny weather, arts scene, and waterfront parks"
+      },
+      {
+        "id": "hialeah",
+        "name": "Hialeah",
+        "description": "A major city in Miami-Dade County with a strong Cuban influence"
+      },
+      {
+        "id": "tallahassee",
+        "name": "Tallahassee",
+        "description": "The capital of Florida, known for its universities and government"
+      },
+      {
+        "id": "fort-lauderdale",
+        "name": "Fort Lauderdale",
+        "description": "Famous for its boating canals and stunning beaches"
+      },
+      {
+        "id": "port-st-lucie",
+        "name": "Port St. Lucie",
+        "description": "A rapidly growing city on Florida's Atlantic coast"
+      },
+      {
+        "id": "cape-coral",
+        "name": "Cape Coral",
+        "description": "Known for its many canals and waterfront living"
+      },
+      {
+        "id": "pembroke-pines",
+        "name": "Pembroke Pines",
+        "description": "A large suburb in the Miami metropolitan area"
+      },
+      {
+        "id": "hollywood-fl",
+        "name": "Hollywood",
+        "description": "A coastal city with a famous boardwalk and beaches"
+      },
+      {
+        "id": "gainesville",
+        "name": "Gainesville",
+        "description": "Home to the University of Florida and a lively college town"
+      },
+      {
+        "id": "miramar",
+        "name": "Miramar",
+        "description": "A diverse city in South Florida with rapid growth"
+      },
+      {
+        "id": "coral-springs",
+        "name": "Coral Springs",
+        "description": "A planned community known for its family-friendly atmosphere"
+      },
+      {
+        "id": "lehigh-acres",
+        "name": "Lehigh Acres",
+        "description": "A large residential community in southwest Florida"
+      },
+      {
+        "id": "clearwater",
+        "name": "Clearwater",
+        "description": "Famous for its white-sand beaches and vibrant downtown"
+      },
+      {
+        "id": "palm-bay",
+        "name": "Palm Bay",
+        "description": "A city on Florida's Space Coast, known for its parks and nature"
+      },
+      {
+        "id": "west-palm-beach",
+        "name": "West Palm Beach",
+        "description": "A city with upscale shops, restaurants, and cultural venues"
+      },
+      {
+        "id": "pompano-beach",
+        "name": "Pompano Beach",
+        "description": "A city north of Fort Lauderdale, known for its beaches and fishing"
+      },
+      {
+        "id": "spring-hill",
+        "name": "Spring Hill",
+        "description": "A growing community on Florida's Nature Coast"
+      },
+      {
+        "id": "lakeland",
+        "name": "Lakeland",
+        "description": "Known for its many lakes and historic downtown"
+      },
+      {
+        "id": "davie",
+        "name": "Davie",
+        "description": "A town in Broward County with a western theme"
+      },
+      {
+        "id": "boca-raton",
+        "name": "Boca Raton",
+        "description": "A city known for its golf courses, beaches, and luxury lifestyle"
+      },
+      {
+        "id": "deltona",
+        "name": "Deltona",
+        "description": "A city in central Florida, part of the Deltona–Daytona Beach–Ormond Beach area"
+      },
+      {
+        "id": "plantation",
+        "name": "Plantation",
+        "description": "A city in Broward County with lush landscaping and parks"
       }
     ],
     "il": [
@@ -83,6 +583,321 @@
         "id": "rockford",
         "name": "Rockford",
         "description": "A historic industrial city with cultural attractions"
+      }
+    ],
+    "al": [
+      {
+        "id": "birmingham",
+        "name": "Birmingham",
+        "description": "The largest city in Alabama, known for its role in the civil rights movement"
+      }
+    ],
+    "ak": [
+      {
+        "id": "anchorage",
+        "name": "Anchorage",
+        "description": "Alaska's largest city, gateway to wilderness and adventure"
+      }
+    ],
+    "az": [
+      {
+        "id": "phoenix",
+        "name": "Phoenix",
+        "description": "The capital of Arizona, known for its desert climate"
+      }
+    ],
+    "ar": [
+      {
+        "id": "little-rock",
+        "name": "Little Rock",
+        "description": "The capital city of Arkansas, located on the Arkansas River"
+      }
+    ],
+    "co": [
+      {
+        "id": "denver",
+        "name": "Denver",
+        "description": "The Mile High City, capital of Colorado"
+      }
+    ],
+    "ct": [
+      {
+        "id": "hartford",
+        "name": "Hartford",
+        "description": "The capital of Connecticut, known for its insurance industry"
+      }
+    ],
+    "de": [
+      {
+        "id": "wilmington",
+        "name": "Wilmington",
+        "description": "The largest city in Delaware, located on the Christina River"
+      }
+    ],
+    "ga": [
+      {
+        "id": "atlanta",
+        "name": "Atlanta",
+        "description": "Georgia's capital and a major cultural and economic center"
+      }
+    ],
+    "hi": [
+      {
+        "id": "honolulu",
+        "name": "Honolulu",
+        "description": "The capital of Hawaii, located on the island of Oahu"
+      }
+    ],
+    "id": [
+      {
+        "id": "boise",
+        "name": "Boise",
+        "description": "The capital and most populous city of Idaho"
+      }
+    ],
+    "in": [
+      {
+        "id": "indianapolis",
+        "name": "Indianapolis",
+        "description": "The capital of Indiana, known for the Indy 500"
+      }
+    ],
+    "ia": [
+      {
+        "id": "des-moines",
+        "name": "Des Moines",
+        "description": "The capital and largest city in Iowa"
+      }
+    ],
+    "ks": [
+      {
+        "id": "wichita",
+        "name": "Wichita",
+        "description": "The largest city in Kansas, known for its aviation industry"
+      }
+    ],
+    "ky": [
+      {
+        "id": "louisville",
+        "name": "Louisville",
+        "description": "Known for the Kentucky Derby and bourbon"
+      }
+    ],
+    "la": [
+      {
+        "id": "new-orleans",
+        "name": "New Orleans",
+        "description": "Famous for Mardi Gras, jazz, and unique cuisine"
+      }
+    ],
+    "me": [
+      {
+        "id": "portland-me",
+        "name": "Portland",
+        "description": "A coastal city in Maine, known for its Old Port district"
+      }
+    ],
+    "md": [
+      {
+        "id": "baltimore",
+        "name": "Baltimore",
+        "description": "A major city in Maryland, known for its harbor and history"
+      }
+    ],
+    "ma": [
+      {
+        "id": "boston",
+        "name": "Boston",
+        "description": "The capital of Massachusetts, rich in American history"
+      }
+    ],
+    "mi": [
+      {
+        "id": "detroit",
+        "name": "Detroit",
+        "description": "The Motor City, known for its automotive industry"
+      }
+    ],
+    "mn": [
+      {
+        "id": "minneapolis",
+        "name": "Minneapolis",
+        "description": "Part of the Twin Cities, known for its parks and lakes"
+      }
+    ],
+    "ms": [
+      {
+        "id": "jackson-ms",
+        "name": "Jackson",
+        "description": "The capital and largest city of Mississippi"
+      }
+    ],
+    "mo": [
+      {
+        "id": "kansas-city-mo",
+        "name": "Kansas City",
+        "description": "Known for jazz, barbecue, and fountains"
+      }
+    ],
+    "mt": [
+      {
+        "id": "billings",
+        "name": "Billings",
+        "description": "The largest city in Montana, known for its proximity to Yellowstone"
+      }
+    ],
+    "ne": [
+      {
+        "id": "omaha",
+        "name": "Omaha",
+        "description": "The largest city in Nebraska, on the Missouri River"
+      }
+    ],
+    "nv": [
+      {
+        "id": "las-vegas",
+        "name": "Las Vegas",
+        "description": "The Entertainment Capital of the World"
+      }
+    ],
+    "nh": [
+      {
+        "id": "manchester",
+        "name": "Manchester",
+        "description": "The largest city in New Hampshire"
+      }
+    ],
+    "nj": [
+      {
+        "id": "newark",
+        "name": "Newark",
+        "description": "A major city in New Jersey, close to New York City"
+      }
+    ],
+    "nm": [
+      {
+        "id": "albuquerque",
+        "name": "Albuquerque",
+        "description": "The largest city in New Mexico, known for its balloon festival"
+      }
+    ],
+    "nc": [
+      {
+        "id": "charlotte",
+        "name": "Charlotte",
+        "description": "The largest city in North Carolina, a major U.S. financial hub"
+      }
+    ],
+    "nd": [
+      {
+        "id": "fargo",
+        "name": "Fargo",
+        "description": "The largest city in North Dakota"
+      }
+    ],
+    "oh": [
+      {
+        "id": "columbus",
+        "name": "Columbus",
+        "description": "The capital and largest city of Ohio"
+      }
+    ],
+    "ok": [
+      {
+        "id": "oklahoma-city",
+        "name": "Oklahoma City",
+        "description": "The capital and largest city of Oklahoma"
+      }
+    ],
+    "or": [
+      {
+        "id": "portland-or",
+        "name": "Portland",
+        "description": "Known for its parks, bridges, and eco-friendliness"
+      }
+    ],
+    "pa": [
+      {
+        "id": "philadelphia",
+        "name": "Philadelphia",
+        "description": "Known for its rich history and the Liberty Bell"
+      }
+    ],
+    "ri": [
+      {
+        "id": "providence",
+        "name": "Providence",
+        "description": "The capital and largest city of Rhode Island"
+      }
+    ],
+    "sc": [
+      {
+        "id": "charleston",
+        "name": "Charleston",
+        "description": "A historic port city in South Carolina"
+      }
+    ],
+    "sd": [
+      {
+        "id": "sioux-falls",
+        "name": "Sioux Falls",
+        "description": "The largest city in South Dakota"
+      }
+    ],
+    "tn": [
+      {
+        "id": "nashville",
+        "name": "Nashville",
+        "description": "The capital of Tennessee, known for country music"
+      }
+    ],
+    "ut": [
+      {
+        "id": "salt-lake-city",
+        "name": "Salt Lake City",
+        "description": "The capital and largest city of Utah"
+      }
+    ],
+    "vt": [
+      {
+        "id": "burlington",
+        "name": "Burlington",
+        "description": "The largest city in Vermont, on Lake Champlain"
+      }
+    ],
+    "va": [
+      {
+        "id": "virginia-beach",
+        "name": "Virginia Beach",
+        "description": "A coastal city in southeastern Virginia"
+      }
+    ],
+    "wa": [
+      {
+        "id": "seattle",
+        "name": "Seattle",
+        "description": "A major city in Washington, known for tech and coffee"
+      }
+    ],
+    "wv": [
+      {
+        "id": "charleston-wv",
+        "name": "Charleston",
+        "description": "The capital and largest city of West Virginia"
+      }
+    ],
+    "wi": [
+      {
+        "id": "milwaukee",
+        "name": "Milwaukee",
+        "description": "The largest city in Wisconsin, on Lake Michigan"
+      }
+    ],
+    "wy": [
+      {
+        "id": "cheyenne",
+        "name": "Cheyenne",
+        "description": "The capital and most populous city of Wyoming"
       }
     ]
   }

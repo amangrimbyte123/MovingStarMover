@@ -38,7 +38,7 @@ export default function RootLayout({
 }): React.JSX.Element {
   return (
     <html lang="en" className={inter.variable}>
-      <body className={`antialiased font-sans ${inter.className}`}>
+      <body className={`antialiased font-sans dark:!text-black ${inter.className}`}>
         {children}
       </body>
     </html>

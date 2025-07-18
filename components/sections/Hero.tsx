@@ -1,177 +1,78 @@
 "use client";
 
-import React, { useState } from 'react';
-import { Truck, Shield, Clock, Star, ArrowRight, MapPin, Phone, CheckCircle, Play } from 'lucide-react';
-import Button from '../ui/Button';
-import Image from 'next/image';
+import Link from "next/link";
+import React from "react";
 
 export default function Hero() {
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background with dynamic gradient */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/hero-background.jpg"
-          alt="Professional moving truck and team"
-          fill
-          className="object-cover"
-          priority
+    <section className="relative w-full min-h-[520px] flex items-center justify-center bg-gray-900 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 w-full h-full">
+        <img
+          src="https://picsum.photos/1500/800?blur=2"
+          alt="Placeholder background"
+          className="w-full h-full object-cover object-center opacity-80"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/85 via-purple-900/75 to-indigo-900/85"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20"></div>
+        <div className="absolute inset-0 bg-black/60" />
       </div>
-      
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-      </div>
+      {/* Content */}
+      <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center px-4 py-12 md:py-20">
 
-      {/* Main content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Main Content */}
-          <div className="text-center lg:text-left space-y-8">
-            {/* Trust Badge */}
-            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 animate-scale-in">
-              <div className="flex -space-x-2">
-                <div className="w-6 h-6 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full border-2 border-white"></div>
-                <div className="w-6 h-6 bg-gradient-to-r from-green-400 to-blue-400 rounded-full border-2 border-white"></div>
-                <div className="w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full border-2 border-white"></div>
+        {/* Headline */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white text-center leading-tight mb-2 drop-shadow-lg">
+          Long Distance Movers
+          <br />
+         
+        </h1>
+        {/* Subheadline */}
+        <p className="text-base sm:text-lg md:text-xl text-gray-100 text-center max-w-2xl mb-8 font-medium">
+          Many Californians are relocating to Texas for the lower cost of living and lifestyle changes. Learn more about this trend and the top movers who can assist with your California-to-Texas relocation.
+        </p>
+        {/* Quote Form Card */}
+        <div className="w-full max-w-xl bg-gradient-to-br from-white via-blue-50 to-blue-100/80 rounded-3xl shadow-2xl p-8 md:p-4 border border-blue-100 backdrop-blur-lg flex flex-col items-center transition-all duration-300">
+         <div className="mb-8 text-[#e7000b] capitalize text-center text-lg font-medium">
+          <span className="text-2xl font-semibold">Long Distance moving services </span><br/>
+          <span className="tracking-wider">Stress free Moving with Moving star movers</span>
+         </div>
+         
+          <form className="w-full flex flex-col gap-8">
+            <div className="flex flex-col sm:flex-row gap-6 w-full items-center">
+              <div className="flex-1 flex flex-col relative">
+                <input
+                  id="movingFrom"
+                  type="text"
+                  placeholder=" "
+                  className="peer w-full px-4 py-3 border border-blue-200 rounded-xl bg-white/80 text-gray-900 text-base focus:ring-2 focus:ring-blue-400 focus:border-blue-400 focus:outline-none transition-all duration-200 shadow-sm placeholder-transparent"
+                />
+                <label htmlFor="movingFrom" className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-500 text-xs font-semibold bg-white/80 px-1 transition-all duration-200 pointer-events-none peer-focus:-top-3 peer-focus:left-3 peer-focus:text-[11px] peer-focus:text-blue-600 peer-not-placeholder-shown:-top-3 peer-not-placeholder-shown:left-3 peer-not-placeholder-shown:text-[11px] peer-not-placeholder-shown:text-blue-600">Moving From</label>
               </div>
-              <span className="text-white/90 text-sm font-medium">Trusted by 10,000+ Happy Customers</span>
-            </div>
-
-            {/* Main Heading */}
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                <span className="text-white">Moving Made</span>
-                <br />
-                <span className="gradient-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Effortless</span>
-              </h1>
-              <p className="text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
-                Professional moving services that transform your relocation into a seamless experience. 
-                From local moves to international relocations.
-              </p>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button 
-                size="lg" 
-                variant="primary"
-                className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-              >
-                <span className="flex items-center gap-2">
-                  Get Free Quote
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 group"
-              >
-                <span className="flex items-center gap-2">
-                  <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  Watch Video
-                </span>
-              </Button>
-            </div>
-
-            {/* Quick Features */}
-            <div className="grid grid-cols-2 gap-4 max-w-md mx-auto lg:mx-0">
-              <div className="flex items-center gap-3 text-white/80">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                <span className="text-sm">Free Estimates</span>
+              <div className="hidden sm:flex items-center justify-center h-12">
+                <span className="w-8 h-8 flex items-center justify-center rounded-full bg-blue-200 text-blue-600 shadow"><svg xmlns='http://www.w3.org/2000/svg' className='w-5 h-5' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M17 8l4 4m0 0l-4 4m4-4H3' /></svg></span>
               </div>
-              <div className="flex items-center gap-3 text-white/80">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                <span className="text-sm">Fully Insured</span>
-              </div>
-              <div className="flex items-center gap-3 text-white/80">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                <span className="text-sm">Same Day Service</span>
-              </div>
-              <div className="flex items-center gap-3 text-white/80">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                <span className="text-sm">24/7 Support</span>
+              <div className="flex-1 flex flex-col relative">
+                <input
+                  id="movingTo"
+                  type="text"
+                  placeholder=" "
+                  className="peer w-full px-4 py-3 border border-blue-200 rounded-xl bg-white/80 text-gray-900 text-base focus:ring-2 focus:ring-blue-400 focus:border-blue-400 focus:outline-none transition-all duration-200 shadow-sm placeholder-transparent"
+                />
+                <label htmlFor="movingTo" className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-500 text-xs font-semibold bg-white/80 px-1 transition-all duration-200 pointer-events-none peer-focus:-top-3 peer-focus:left-3 peer-focus:text-[11px] peer-focus:text-blue-600 peer-not-placeholder-shown:-top-3 peer-not-placeholder-shown:left-3 peer-not-placeholder-shown:text-[11px] peer-not-placeholder-shown:text-blue-600">Moving To</label>
               </div>
             </div>
-          </div>
-
-          {/* Right Column - Stats Cards */}
-          <div className="space-y-6">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="glass rounded-2xl p-6 hover-lift group cursor-pointer">
-                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl mb-4 mx-auto group-hover:scale-110 transition-transform">
-                  <Truck className="w-6 h-6 text-white" />
-                </div>
-                <div className="text-3xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">10,000+</div>
-                <div className="text-white/80 text-sm">Successful Moves</div>
-              </div>
-              
-              <div className="glass rounded-2xl p-6 hover-lift group cursor-pointer">
-                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl mb-4 mx-auto group-hover:scale-110 transition-transform">
-                  <MapPin className="w-6 h-6 text-white" />
-                </div>
-                <div className="text-3xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">50 States</div>
-                <div className="text-white/80 text-sm">Nationwide Coverage</div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <div className="glass rounded-2xl p-6 hover-lift group cursor-pointer">
-                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-xl mb-4 mx-auto group-hover:scale-110 transition-transform">
-                  <Shield className="w-6 h-6 text-white" />
-                </div>
-                <div className="text-3xl font-bold text-white mb-2 group-hover:text-green-300 transition-colors">100%</div>
-                <div className="text-white/80 text-sm">Fully Insured</div>
-              </div>
-              
-              <div className="glass rounded-2xl p-6 hover-lift group cursor-pointer">
-                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl mb-4 mx-auto group-hover:scale-110 transition-transform">
-                  <Clock className="w-6 h-6 text-white" />
-                </div>
-                <div className="text-3xl font-bold text-white mb-2 group-hover:text-orange-300 transition-colors">24/7</div>
-                <div className="text-white/80 text-sm">Support Available</div>
-              </div>
-            </div>
-
-            {/* Contact Card */}
-            <div className="glass rounded-2xl p-6 border-l-4 border-blue-400">
-              <div className="flex items-center gap-4">
-                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl">
-                  <Phone className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <div className="text-white font-semibold">Need Immediate Help?</div>
-                  <div className="text-white/80 text-sm">Call us now for instant support</div>
-                </div>
-              </div>
-              <Button 
-                size="sm" 
-                variant="primary"
-                className="w-full mt-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-              >
-                <Phone className="w-4 h-4 mr-2" />
-                Call (555) 123-4567
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="flex flex-col items-center gap-2 text-white/60">
-          <span className="text-sm font-medium">Scroll to explore</span>
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-bounce"></div>
-          </div>
+            <Link
+            href="#"
+              type="submit"
+              className="w-full sm:w-auto mx-auto bg-gradient-to-r from-pink-500 via-blue-500 to-teal-400 hover:from-pink-600 hover:to-teal-500 text-white font-bold text-lg py-3 px-16 rounded-full shadow-2xl transition-all duration-200 tracking-wide focus:ring-4 focus:ring-pink-300 focus:outline-none flex items-center justify-center gap-3 group relative overflow-hidden animate-pulse"
+            >
+              <span className="absolute inset-0 rounded-full bg-pink-700 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+              <span className="flex items-center gap-2 z-10">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-white group-hover:scale-125 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 17l5-5m0 0l-5-5m5 5H6" />
+              </svg>
+              <span className="uppercase tracking-widest font-extrabold drop-shadow">Get My Free Quote</span>
+              </span>
+            </Link>
+          </form>
         </div>
       </div>
     </section>

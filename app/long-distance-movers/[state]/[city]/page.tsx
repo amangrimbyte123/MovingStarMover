@@ -11,6 +11,7 @@ import Footer from '@/components/sections/Footer';
 import Card, { CardHeader, CardContent, CardFooter } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import { MapPin, Phone, Shield, Clock, CheckCircle2, Building2, Truck, PackageOpen, Users, ArrowRight, ArrowLeft } from 'lucide-react';
+import Hero from '@/components/sections/Hero';
 
 type PageProps = {
   params: Promise<{
@@ -54,37 +55,9 @@ export default function CityPage({ params }: PageProps) {
   return (
     <>
       <Header />
-      <main className="pt-20 min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
+      <main className=" min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
         {/* Hero Section */}
-        <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20 overflow-hidden">
-          <div className="absolute inset-0 opacity-20">
-            <Image
-              src="/images/hero-background.jpg"
-              alt="Moving background"
-              fill
-              style={{ objectFit: 'cover' }}
-              priority
-            />
-          </div>
-          <div className="container mx-auto px-4 relative">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Moving to {city.name}, {state.name}
-              </h1>
-              <p className="text-xl md:text-2xl opacity-90 mb-8">
-                Your Trusted Partner for a Smooth Transition to Your New Home
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="xl" variant="primary" className="bg-white text-blue-600 hover:bg-gray-100">
-                  Get Free Quote
-                </Button>
-                <Button size="xl" variant="outline" className="border-white text-white hover:bg-white/10">
-                  Learn More
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
+    <Hero/>
 
         <div className="container mx-auto px-4 py-16">
           {/* About City Section */}
@@ -194,19 +167,11 @@ export default function CityPage({ params }: PageProps) {
                     href={`/long-distance-movers/${stateId}/${cityId}/to/${toCity.id}`}
                     className="block"
                   >
-                    <Card className="h-full hover:shadow-xl transition-shadow duration-300">
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-4 mb-4">
-                          <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                            <Truck className="w-6 h-6 text-blue-600" />
-                          </div>
-                          <div>
-                            <h3 className="text-xl font-semibold">Moving to {toCity.name}</h3>
-                            <p className="text-gray-600 text-sm">From {city.name}</p>
-                          </div>
-                          <ArrowRight className="w-5 h-5 text-blue-600 ml-auto" />
-                        </div>
-                        <p className="text-gray-600 line-clamp-2">{toCity.description}</p>
+                    <Card className="h-full hover:shadow-lg transition-shadow duration-200 p-3">
+                      <CardContent className="flex items-center gap-2">
+                        <Truck className="w-5 h-5 text-blue-600" />
+                        <span className="font-medium text-sm">To {toCity.name}</span>
+                        <ArrowRight className="w-4 h-4 text-blue-600 ml-auto" />
                       </CardContent>
                     </Card>
                   </Link>

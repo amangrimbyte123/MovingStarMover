@@ -1,161 +1,72 @@
 import React from 'react';
-import { Phone, ClipboardCheck, Truck, Home, Star } from 'lucide-react';
-import Image from 'next/image';
-import Button from '../ui/Button';
 
-const processSteps = [
+const resources = [
   {
-    id: 1,
-    title: 'Get Your Free Quote',
-    description: 'Contact us for a detailed, no-obligation quote tailored to your specific moving needs.',
-    icon: Phone,
-    image: '/images/customer-service.jpg',
-    features: ['Online quote form', 'Phone consultation', 'In-home assessment']
+    icon: (
+      <svg className="w-12 h-12 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M16 3v4M8 3v4" /></svg>
+    ),
+    title: 'PACKING TIPS',
+    link: '#',
   },
   {
-    id: 2,
-    title: 'Plan & Prepare',
-    description: 'Our team works with you to create a comprehensive moving plan and timeline.',
-    icon: ClipboardCheck,
-    image: '/images/packing-service.jpg',
-    features: ['Custom moving plan', 'Packing timeline', 'Inventory checklist']
+    icon: (
+      <svg className="w-12 h-12 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" /><path d="M8 2v4M16 2v4M4 10h16" /></svg>
+    ),
+    title: 'MOVER CHECKLIST',
+    link: '#',
   },
   {
-    id: 3,
-    title: 'Professional Moving Day',
-    description: 'Our experienced team handles your move with care, efficiency, and attention to detail.',
-    icon: Truck,
-    image: '/images/furniture-moving.jpg',
-    features: ['Expert loading', 'Secure transport', 'GPS tracking']
+    icon: (
+      <svg className="w-12 h-12 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M16 3v4M8 3v4" /></svg>
+    ),
+    title: 'MOVING COST CALCULATOR',
+    link: '#',
   },
   {
-    id: 4,
-    title: 'Settle In',
-    description: 'We help you unpack and settle into your new home, ensuring everything is perfect.',
-    icon: Home,
-    image: '/images/team-working.jpg',
-    features: ['Furniture assembly', 'Unpacking service', 'Final inspection']
-  }
+    icon: (
+      <svg className="w-12 h-12 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M17 8h2a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2v-8a2 2 0 012-2h2" /><rect x="7" y="2" width="10" height="12" rx="2" /></svg>
+    ),
+    title: 'FREQUENTLY ASKED QUESTIONS',
+    link: '#',
+  },
+  {
+    icon: (
+      <svg className="w-12 h-12 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M16 3v4M8 3v4" /></svg>
+    ),
+    title: 'VIRTUAL MOVE SURVEY',
+    link: '#',
+  },
+  {
+    icon: (
+      <svg className="w-12 h-12 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="10" rx="2" /><path d="M8 17v2a2 2 0 002 2h4a2 2 0 002-2v-2" /></svg>
+    ),
+    title: 'MOVING TIPS',
+    link: '#',
+  },
 ];
 
 export default function Process() {
   return (
-    <section id="process" className="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-30" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-      }}></div>
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 rounded-full px-4 py-2 mb-6">
-            <Star className="w-4 h-4" />
-            <span className="text-sm font-medium">Our Process</span>
-          </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Simple Moving
-            <span className="gradient-text"> Process</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We've streamlined our moving process to make your relocation as smooth and stress-free as possible. 
-            Here's how we work together to ensure a successful move.
-          </p>
-        </div>
-
-        <div className="space-y-16">
-          {processSteps.map((step, index) => {
-            const IconComponent = step.icon;
-            const isEven = index % 2 === 0;
-            
-            return (
-              <div 
-                key={step.id}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                  isEven ? '' : 'lg:grid-flow-col-dense'
-                }`}
-              >
-                {/* Content */}
-                <div className={`space-y-6 ${isEven ? '' : 'lg:col-start-2'}`}>
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold">
-                      {step.id}
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                        <IconComponent className="w-6 h-6 text-blue-600" />
-                      </div>
-                      <h3 className="text-2xl font-bold text-gray-900">{step.title}</h3>
-                    </div>
-                  </div>
-                  
-                  <p className="text-lg text-gray-600 leading-relaxed">
-                    {step.description}
-                  </p>
-                  
-                  <div className="space-y-3">
-                    {step.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  {step.id === 1 && (
-                    <div className="pt-4">
-                      <Button variant="primary" size="lg">
-                        Get Started Today
-                      </Button>
-                    </div>
-                  )}
-                </div>
-
-                {/* Image */}
-                <div className={`relative ${isEven ? '' : 'lg:col-start-1'}`}>
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                    <Image
-                      src={step.image}
-                      alt={step.title}
-                      width={600}
-                      height={400}
-                      className="w-full h-80 object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-                    
-                    {/* Step number overlay */}
-                    <div className="absolute top-6 right-6 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                      <span className="text-xl font-bold text-blue-600">{step.id}</span>
-                    </div>
-                  </div>
-                  
-                  {/* Decorative elements */}
-                  <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full opacity-20"></div>
-                  <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-gradient-to-r from-green-500 to-blue-500 rounded-full opacity-20"></div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-20">
-          <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Ready to Start Your Move?
-            </h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Join thousands of satisfied customers who have trusted MovingStarMover with their relocation needs.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg">
-                Get Free Quote
-              </Button>
-              <Button variant="outline" size="lg">
-                Call Now
-              </Button>
+    <section className="w-full bg-white py-16 px-4" id="resources">
+      <div className="max-w-4xl mx-auto text-center mb-10">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">The Best Moving Company Resources and Tips</h2>
+        <p className="text-gray-700 max-w-2xl mx-auto mb-8 text-base md:text-lg">
+          With over nine decades in the business, it’s safe to say North American Van Lines knows a thing or two about moving! If you’re planning a move and not sure where to begin, you’ll love our free online resources to help streamline your upcoming relocation. From packaging estimates to thorough checklists that cover every stage of the moving process, we have you covered.
+        </p>
+      </div>
+      <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-10 mb-8">
+        {resources.map((resource, idx) => (
+          <div key={idx} className="flex items-center gap-4">
+            {resource.icon}
+            <div className="text-left">
+              <h4 className="font-bold text-lg text-blue-900 uppercase tracking-tight mb-1">{resource.title}</h4>
+              <a href={resource.link} className="text-xs text-red-600 font-semibold hover:underline">VIEW ALL</a>
             </div>
           </div>
-        </div>
+        ))}
+      </div>
+      <div className="flex justify-center mt-4">
+        <a href="#" className="bg-red-600 text-white font-bold px-6 py-2 rounded hover:bg-red-700 transition-colors text-sm shadow">SEE ALL MOVING RESOURCES</a>
       </div>
     </section>
   );
